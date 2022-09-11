@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-size: cover;
+    /* background: url(img/body-img-2.png); */
+    /* background-image: url(img/body-img-2.png); */
+    background-repeat: no-repeat;
+    background-color: rgb(230, 203, 222);
+    /* 30 03 22 */
+    min-height: 100vh;
+
+}
+
+.navigation-toggle {
+    display: none;
+    background: none;
+    border: none;
+}
+
+.logo img {
+    max-width: 100px;
+    aspect-ratio: 1rem;
+}
+
+.nav-head {
+    background-color: rgba(230, 203, 222, 0.5);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 2rem;
+    align-items: center;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-menu li {
+    list-style: none;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 700;
+    margin: 0 2rem;
+    padding: 0.3rem 0.6rem;
+        border-radius: 5px;
+        box-shadow: 0px -1px 20px -1px rgba(0,0,0,0.1);
+
+}
+
+@media screen and (max-width:336px) {
+    .logo img {
+        max-width: 80px !important;
+        aspect-ratio: 1rem;
+    }
+
+    .nav-menu {
+        position: fixed;
+        inset: 0 0 0% 0% !important;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .nav-head {
+        background-color: transparent;
+        margin-right: 0;
+        align-items: flex-start;
+
+    }
+
+    .nav-menu {
+        position: fixed;
+        inset: 0 0 0% 40%;
+        display: flex;
+        flex-direction: column;
+        /* background-color: black; */
+        background-color: rgba(230, 203, 222, 0.85);
+        padding-top: 5rem;
+        /* transition: transfrom; */
+        transition: transform 400ms ease-out;
+    }
+    .nav-menu[data-visible="false"]{
+        transform: translateX(100%);
+    }
+    .nav-menu[data-visible="true"]{
+        transform: translateX(0%);
+    }
+
+    .nav-menu li {
+        margin: 0;
+        margin: 0 1rem;
+        padding: 1rem 3rem;
+    }
+
+    .nav-menu li a {
+        /* border-bottom: 0.5px solid black; */
+        /* margin: 10rem 1rem !important; */
+        
+
+
+    }
+
+    .nav-menu {
+
+        min-height: 100vh;
+        margin: 0 !important;
+    }
+
+    .navigation-toggle {
+        display: block;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        z-index: 99;
+    }
+}
